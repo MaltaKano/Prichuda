@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "public/css/dark.min.css";
+
+:root{
+    --tw-prose-bold:#c8c8c8;
+}
+.prose :where(h2):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-hr);
+    font-size: 2em;
+    line-height: 1.1;
+  }
+  .prose :where(strong):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose-hr);
+  }
+  .prose :where(a):not(:where([class~="not-prose"] *)) {
+    color: rgb(117,218,180);
+    text-decoration: none;
+    display: inline;
+  }
+  .prose :where(ul):not(:where([class~="not-prose"] *)) li,.prose :where(ol):not(:where([class~="not-prose"] *)) {
+    list-style: disc ;
+    color: #c8c8c8;
+    font-size: 1.325rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .prose :where(ol):not(:where([class~="not-prose"] *)) li {
+    list-style-type: decimal;
+  }
+  .prose :where(ol):not(:where([class~="not-prose"] *)) li:marker {
+    color: #c8c8c8;
+  } 

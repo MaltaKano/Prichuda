@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": { "first": "Раннее", "second": "утро" },
+    "image": "/img/full/1.jpg",
+    "sub": "Design"
+  },
+  {
+    "id": 2,
+    "title": { "first": "Домой по", "second": "шпалам" },
+    "image": "/img/full/4.jpg",
+    "sub": "Design"
+  },
+  {
+    "id": 3,
+    "title": { "first": "В Питере", "second": "осень" },
+    "image": "/img/full/5.jpg",
+    "sub": "Design"
+  },
+  {
+    "id": 4,
+    "title": { "first": "А дома", "second": "гости" },
+    "image": "/img/full/6.jpg",
+    "sub": "Design"
+  }
+]
