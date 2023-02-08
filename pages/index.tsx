@@ -9,6 +9,35 @@ import { drupal } from "lib/drupal"
 import { getParams } from "lib/get-params"
 import { Layout, LayoutProps } from "components/layout"
 import { NodeArticleCardAlt } from "components/node--article--card-alt"
+var $ = require("jquery");
+if (typeof window !== "undefined") {
+  window.$ = window.jQuery = require("jquery");
+}
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+import dynamic from "next/dynamic";
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
+
+const state= {
+  responsive: {
+    0: {
+      items: 1,
+      margin: 30,
+    },
+    768: {
+      items: 1,
+      margin: 50,
+    },
+    980: {
+      items: 2,
+    },
+    1240: {
+      items: 3,
+    },
+  },
+}
 
 interface IndexPageProps extends LayoutProps {
   promotedArticles: DrupalNode[]
@@ -47,7 +76,18 @@ export default function IndexPage({
           </h3>
           <span className="tbg">Читай</span>
         </div>
-        <div className="grid lg:grid-cols-3">
+        <OwlCarousel
+                        responsive={state.responsive}
+                        responsiveBaseElement='body'
+                        navElement='div'
+                        dots={false}
+                        navContainer='.owl-nav-custom-works'
+                        nav={true}
+                        navText={[
+                          "<i class='ion-chevron-left'></i>",
+                          "<i class='ion-chevron-right'></i>",
+                        ]}
+                      >
           {promotedArticles?.length
             ? promotedArticles.map((node, index) => (
                 <NodeArticleCardAlt
@@ -61,7 +101,10 @@ export default function IndexPage({
                 />
               ))
             : null}
-          </div>
+		   </OwlCarousel>
+		  	<div className="divider-m-2 h-[25px] md:h-[50px]"></div>
+            <div className="owl-nav-custom-works"></div>
+        <div className="divider-m-2 h-[25px] md:h-[50px]"></div>
         </div>
       </section>
 	  </main>
@@ -77,7 +120,7 @@ export async function getStaticProps(
   >("node--article", context, {
     params: getParams("node--article", "card")
       .addFilter("promote", "1")
-      .addPageLimit(3)
+      .addPageLimit(6)
       .addSort("created", "DESC")
       .addFields("user--user", ["display_name"])
       .getQueryObject(),

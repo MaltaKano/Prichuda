@@ -18,10 +18,10 @@ export function getParams(
   if (name === "node--article--card") {
     return params
     .addFilter("status", "1")
-    .addInclude(["field_media_image.field_media_image", "field_tags"])
-    .addFields("node--article", ["title", "path", "field_media_image", "status", "created", "uid", "field_tags"])
+    .addInclude(["field_media_image.field_media_image", "uid.user_picture", "field_tags"])
+    .addFields("node--article", ["title", "path", "body", "field_media_image", "status", "created", "uid", "field_tags"])
     .addFields("file--file", ["uri", "resourceIdObjMeta"])
-    .addFields("user--user", ["display_name"])
+    .addFields("user--user", ["display_name", "user_picture"])
     .addFields("taxonomy_term--tags", ["name", "path"])
   } 
   

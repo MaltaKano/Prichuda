@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "public/css/dark.min.css";
+@import "public/css/ionicons.min.css";
 
 :root{
     --tw-prose-bold:#c8c8c8;
@@ -32,3 +33,172 @@
   .prose :where(ol):not(:where([class~="not-prose"] *)) li:marker {
     color: #c8c8c8;
   } 
+  .more-wraper-center {
+    position: relative;
+    width: 120px !important;
+    max-width: 120px;
+    height: 120px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  a.more-button-wrapper {
+    display:inline;
+        vertical-align: baseline;
+    text-decoration: none;
+      outline: none;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      transition: all .5s linear;
+      transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+  }
+  .more-button-bg-center {
+    background: none;
+  }
+  
+  .more-button-circle {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-clip: content-box;
+    padding: 2.5px;
+    cursor: pointer;
+  }
+  
+  .more-wraper-center:hover .more-button-circle {
+    -webkit-animation: spin 5s linear infinite;
+    -moz-animation: spin 5s linear infinite;
+    -ms-animation: spin 5s linear infinite;
+    -o-animation: spin 5s linear infinite;
+    animation: spin 5s linear infinite;
+  }
+  
+  .more-button-txt-center {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 120px !important;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .more-button-txt-center {
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .more-button-txt-center {
+      font-size: 12px;
+    }
+  }
+  
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .more-button-bg-center.more-button-bg-center-color-rev {
+    border: 1px dashed #b2b2b2;
+  }
+  
+  .more-button-txt-center.more-button-txt-center-color-rev span {
+    color: #b2b2b2;
+  }
+  .owl-nav-custom-works {
+      position: relative;
+      width: 114px!important;
+      max-width: 114px;
+      height: 50px;
+      left: 2px;
+      margin: 2px auto;
+      text-align: center;
+      overflow: hidden;
+  }
+  .owl-nav-custom-works .owl-prev.disabled, .owl-nav-custom-works .owl-next.disabled {
+      background: #181b21 !important;
+  }
+  .owl-prev, .owl-next {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      position: absolute;
+      display: block;
+      text-align: center;
+      -webkit-transition: all .4s ease-out;
+      -moz-transition: all .4s ease-out;
+      -ms-transition: all .4s ease-out;
+      -o-transition: all .4s ease-out;
+      transition: all .4s ease-out;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      font-size: 12px;
+      color: #fff;
+      background: #20242c;
+      cursor: pointer;
+      z-index: 10;
+  }
+  .owl-prev.disabled, .owl-next.disabled {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          background: hsl(0deg 0% 12%)!important;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          border-radius: 50%;
+          -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+          cursor: default!important;
+  
+  }
+  .owl-prev {
+      left: 0;
+  }
+  .owl-next {
+      left: 60px;
+  }
