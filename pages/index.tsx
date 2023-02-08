@@ -78,7 +78,6 @@ export default function IndexPage({
         </div>
         <OwlCarousel
                         responsive={state.responsive}
-                        responsiveBaseElement='body'
                         navElement='div'
                         dots={false}
                         navContainer='.owl-nav-custom-works'

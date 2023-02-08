@@ -1,8 +1,9 @@
+
 const webpack = require("webpack");
 
 module.exports = {
   swcMinify: true,
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+  webpack: (config, { webpack }) => {
     config.plugins.push(
      new webpack.ProvidePlugin({
      $: "jquery",

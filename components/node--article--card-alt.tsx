@@ -92,9 +92,7 @@ export function NodeArticleCardAlt ({
   }, []);
   
   return (
-    <div className="basis-full"
-      {...props}
-    >
+    <article className="basis-full" {...props}>
       
         <div className="wow fadeInUp" data-wow-delay=".3s">
           <div className={classNames(
@@ -151,7 +149,7 @@ export function NodeArticleCardAlt ({
 		  <SliderOwerlay sliderRef={fixedHeader} />
     <main ref={MainContent} className="main-content px-4">
     <div className="container mx-auto">
-      <article className="grid gap-8 pb-10 lg:grid-cols-10">
+      <div className="grid gap-8 pb-10 lg:grid-cols-10">
         <div className="md:p-8 md:pt-0 lg:col-span-9 text-base">
           <div className="flex items-center my-4 space-x-2 text-sm">
             {node.uid?.display_name ? (
@@ -200,13 +198,13 @@ export function NodeArticleCardAlt ({
           )}
         </div>
 		
-      </article>
+      </div>
 	  <div className="basis-full pb-9">
 	  <div className="more-wraper-center">
 	  <a className="more-button-wrapper">
 	  <div className="more-button-bg-center more-button-bg-center-color-rev more-button-circle"></div>
 	  <div className="more-button-txt-center more-button-txt-center-color-rev">
-	  <span type="button" onClick={closeModal}>Закрыть</span>
+	  <span onClick={closeModal}>Закрыть</span>
 	  </div>
 	  </a>
 	  </div>
@@ -215,6 +213,6 @@ export function NodeArticleCardAlt ({
     </main>
         </Modal>
       )}
-      </div>	  
+      </article>	  
   );
 }
